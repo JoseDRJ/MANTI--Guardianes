@@ -1,0 +1,3902 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)file:///C:/Users/JOSE%20DAVID/.vscode/index.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MANATÍ | Guardianes del agua</title>
+
+<meta name="description" content="Experiencia educativa interactiva sobre los manatíes.">
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root{
+
+    --ocean:#062f3b;
+    --ocean2:#0b5263;
+    --cyan:#20c9c3;
+    --cyan2:#6be7df;
+
+    --green:#72c66d;
+
+    --cream:#f5f1e8;
+    --white:#ffffff;
+
+    --text:#17343b;
+    --muted:#6c858a;
+
+    --bg:#f4fafb;
+    --card:#ffffff;
+
+    --shadow:0 20px 60px rgba(4,45,55,.12);
+
+    --radius:24px;
+
+    --transition:.35s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#e7f1f2;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--ocean2);
+    border-radius:20px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:75px;
+
+    z-index:1000;
+
+    background:
+    rgba(6,47,59,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+.nav{
+
+    max-width:1300px;
+
+    height:100%;
+
+    margin:auto;
+
+    padding:0 25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+
+.logo{
+
+    font-size:1.35rem;
+
+    font-weight:900;
+
+    letter-spacing:3px;
+
+    color:white;
+
+}
+
+.logo span{
+    color:var(--cyan);
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:25px;
+
+    list-style:none;
+
+}
+
+
+.nav-links a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+
+.nav-links a:hover{
+    color:var(--cyan);
+}
+
+
+.menu-btn{
+
+    display:none;
+
+    color:white;
+
+    font-size:1.7rem;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    color:white;
+
+    background:
+
+    linear-gradient(
+        110deg,
+        rgba(2,30,39,.95),
+        rgba(4,66,78,.63)
+    ),
+
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+.hero-content{
+
+    max-width:1300px;
+
+    width:100%;
+
+    margin:auto;
+
+    padding:120px 25px 70px;
+
+}
+
+
+.eyebrow{
+
+    color:var(--cyan2);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-weight:800;
+
+    font-size:.8rem;
+
+    margin-bottom:20px;
+
+}
+
+
+.hero h1{
+
+    font-size:
+    clamp(4rem,9vw,9rem);
+
+    line-height:.9;
+
+    letter-spacing:-5px;
+
+    max-width:900px;
+
+}
+
+
+.hero h1 span{
+    color:var(--cyan);
+}
+
+
+.hero-description{
+
+    max-width:650px;
+
+    margin-top:30px;
+
+    font-size:1.15rem;
+
+    color:#e1f3f4;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:35px;
+
+}
+
+
+.btn{
+
+    border:none;
+
+    padding:15px 25px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    font-weight:800;
+
+    transition:var(--transition);
+
+}
+
+
+.btn-primary{
+
+    background:var(--cyan);
+
+    color:var(--ocean);
+
+}
+
+
+.btn-outline{
+
+    border:1px solid rgba(255,255,255,.5);
+
+    color:white;
+
+    background:transparent;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.2);
+
+}
+
+
+.hero-stats{
+
+    display:flex;
+
+    gap:45px;
+
+    margin-top:70px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.hero-stat strong{
+
+    display:block;
+
+    font-size:2rem;
+
+    color:var(--cyan);
+
+}
+
+
+.hero-stat span{
+
+    font-size:.8rem;
+
+    color:#c8dfe2;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section{
+
+    padding:110px 25px;
+
+}
+
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+.section-header{
+
+    margin-bottom:60px;
+
+}
+
+
+.section-tag{
+
+    color:var(--ocean2);
+
+    font-size:.75rem;
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+}
+
+
+.section-title{
+
+    font-size:
+    clamp(2.3rem,5vw,4rem);
+
+    line-height:1.05;
+
+    color:var(--ocean);
+
+    margin-top:10px;
+
+}
+
+
+.section-description{
+
+    max-width:700px;
+
+    color:var(--muted);
+
+    margin-top:18px;
+
+}
+
+
+/* =========================================================
+   QUICK FACTS
+========================================================= */
+
+.facts{
+
+    background:var(--ocean);
+
+    color:white;
+
+}
+
+
+.facts-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.fact{
+
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    background:
+    rgba(255,255,255,.06);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    transition:var(--transition);
+
+}
+
+
+.fact:hover{
+
+    transform:translateY(-8px);
+
+    background:
+    rgba(255,255,255,.1);
+
+}
+
+
+.fact-number{
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    color:var(--cyan);
+
+}
+
+
+.fact h3{
+    margin-top:10px;
+}
+
+
+.fact p{
+
+    color:#bcd4d7;
+
+    font-size:.9rem;
+
+}
+
+
+/* =========================================================
+   INTERACTIVE TABS
+========================================================= */
+
+.tabs{
+
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:35px;
+
+}
+
+
+.tab{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#e4eff0;
+
+    color:var(--ocean);
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:var(--transition);
+
+}
+
+
+.tab.active{
+
+    background:var(--ocean);
+
+    color:white;
+
+}
+
+
+.tab-content{
+
+    display:none;
+
+    animation:fade .5s ease;
+
+}
+
+
+.tab-content.active{
+
+    display:block;
+
+}
+
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   BIOLOGY
+========================================================= */
+
+.bio-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+.bio-image{
+
+    min-height:550px;
+
+    border-radius:35px;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.05),
+        rgba(0,0,0,.15)
+    ),
+
+    url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.bio-text h3{
+
+    font-size:2rem;
+
+    color:var(--ocean);
+
+    margin-bottom:20px;
+
+}
+
+
+.info-list{
+
+    list-style:none;
+
+    margin-top:25px;
+
+}
+
+
+.info-list li{
+
+    padding:12px 0;
+
+    border-bottom:
+    1px solid #dce9ea;
+
+}
+
+
+.info-list strong{
+
+    color:var(--ocean);
+
+}
+
+
+/* =========================================================
+   ANATOMY
+========================================================= */
+
+.anatomy{
+
+    background:#edf8f8;
+
+}
+
+
+.anatomy-container{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+.anatomy-image{
+
+    width:100%;
+
+    height:500px;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+        rgba(4,50,61,.12),
+        rgba(4,50,61,.25)
+    ),
+
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1500&q=90");
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+.hotspot{
+
+    position:absolute;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    border:3px solid white;
+
+    background:var(--cyan);
+
+    color:var(--ocean);
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:0 0 0 8px rgba(32,201,195,.25);
+
+    transition:.3s;
+
+}
+
+
+.hotspot:hover{
+
+    transform:scale(1.2);
+
+}
+
+
+.hotspot-info{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:30px;
+
+    right:30px;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.94);
+
+    backdrop-filter:blur(10px);
+
+    display:none;
+
+}
+
+
+.hotspot-info.show{
+    display:block;
+}
+
+
+/* =========================================================
+   SPECIES
+========================================================= */
+
+.species-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.species-card{
+
+    background:white;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+
+.species-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+.species-image{
+
+    height:230px;
+
+    background-size:cover;
+
+    background-position:center;
+
+}
+
+
+.amazon{
+    background-image:
+    url("https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1000&q=85");
+}
+
+
+.caribbean{
+    background-image:
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85");
+}
+
+
+.africa{
+    background-image:
+    url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85");
+}
+
+
+.species-info{
+
+    padding:30px;
+
+}
+
+
+.species-info small{
+
+    color:var(--cyan);
+
+    font-weight:900;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+}
+
+
+.species-info h3{
+
+    margin:8px 0;
+
+    font-size:1.5rem;
+
+    color:var(--ocean);
+
+}
+
+
+/* =========================================================
+   HABITAT MAP
+========================================================= */
+
+.map-section{
+
+    background:var(--ocean);
+
+    color:white;
+
+}
+
+
+.map{
+
+    height:500px;
+
+    border-radius:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+    radial-gradient(
+        circle at 50% 50%,
+        #1e7785,
+        #063b49
+    );
+
+}
+
+
+.map::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.2;
+
+    background-image:
+
+    linear-gradient(
+        rgba(255,255,255,.2) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.2) 1px,
+        transparent 1px
+    );
+
+    background-size:50px 50px;
+
+}
+
+
+.map-point{
+
+    position:absolute;
+
+    width:22px;
+
+    height:22px;
+
+    background:var(--cyan);
+
+    border:4px solid white;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    animation:pulse 2s infinite;
+
+}
+
+
+.map-point::after{
+
+    content:attr(data-location);
+
+    position:absolute;
+
+    top:28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    white-space:nowrap;
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+}
+
+
+@keyframes pulse{
+
+    0%,100%{
+        box-shadow:0 0 0 0 rgba(32,201,195,.6);
+    }
+
+    50%{
+        box-shadow:0 0 0 15px rgba(32,201,195,0);
+    }
+
+}
+
+
+/* =========================================================
+   DIET
+========================================================= */
+
+.diet-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+
+.diet-card{
+
+    padding:35px;
+
+    border-radius:28px;
+
+    background:white;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+}
+
+
+.diet-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+.diet-icon{
+
+    font-size:3rem;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =========================================================
+   LIFE CYCLE
+========================================================= */
+
+.timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    bottom:0;
+
+    width:3px;
+
+    background:var(--cyan);
+
+}
+
+
+.timeline-item{
+
+    width:50%;
+
+    padding:25px;
+
+    position:relative;
+
+}
+
+
+.timeline-item:nth-child(odd){
+
+    left:0;
+
+    text-align:right;
+
+}
+
+
+.timeline-item:nth-child(even){
+
+    left:50%;
+
+}
+
+
+.timeline-dot{
+
+    position:absolute;
+
+    top:35px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    border:5px solid white;
+
+    box-shadow:0 0 0 2px var(--cyan);
+
+}
+
+
+.timeline-item:nth-child(odd)
+.timeline-dot{
+
+    right:-10px;
+
+}
+
+
+.timeline-item:nth-child(even)
+.timeline-dot{
+
+    left:-10px;
+
+}
+
+
+.timeline-content{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* =========================================================
+   THREATS
+========================================================= */
+
+.threats{
+
+    background:#fff8ed;
+
+}
+
+
+.threat-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+
+.threat-card{
+
+    padding:30px;
+
+    background:white;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.progress{
+
+    height:12px;
+
+    background:#e8eeee;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+    overflow:hidden;
+
+}
+
+
+.progress span{
+
+    display:block;
+
+    height:100%;
+
+    width:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--green),
+        var(--cyan)
+    );
+
+    transition:1.5s;
+
+}
+
+
+/* =========================================================
+   CONSERVATION
+========================================================= */
+
+.conservation{
+
+    background:
+
+    linear-gradient(
+        120deg,
+        #063541,
+        #0a5967
+    );
+
+    color:white;
+
+}
+
+
+.conservation-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+.conservation-card{
+
+    padding:30px;
+
+    background:
+    rgba(255,255,255,.07);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    transition:.3s;
+
+}
+
+
+.conservation-card:hover{
+
+    transform:translateY(-8px);
+
+    background:
+    rgba(255,255,255,.12);
+
+}
+
+
+.conservation-icon{
+
+    font-size:2.5rem;
+
+}
+
+
+/* =========================================================
+   DID YOU KNOW
+========================================================= */
+
+.fun-fact{
+
+    padding:100px 25px;
+
+    text-align:center;
+
+    background:var(--cream);
+
+}
+
+
+.fact-box{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+
+.fact-box .emoji{
+
+    font-size:4rem;
+
+}
+
+
+.fact-box h2{
+
+    font-size:
+    clamp(2rem,5vw,4rem);
+
+    color:var(--ocean);
+
+    margin:20px 0;
+
+}
+
+
+.fact-button{
+
+    margin-top:20px;
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz{
+
+    background:#edf7f7;
+
+}
+
+
+.quiz-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.question{
+
+    margin-bottom:35px;
+
+}
+
+
+.question h3{
+
+    color:var(--ocean);
+
+    margin-bottom:15px;
+
+}
+
+
+.option{
+
+    display:block;
+
+    padding:14px 18px;
+
+    border:1px solid #dce8e9;
+
+    border-radius:12px;
+
+    margin:9px 0;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+
+.option:hover{
+
+    background:#eefafa;
+
+}
+
+
+.result{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#edf9f8;
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-box{
+
+    max-width:700px;
+
+    margin:0 auto 45px;
+
+    position:relative;
+
+}
+
+
+.search-box input{
+
+    width:100%;
+
+    padding:18px 25px;
+
+    border:1px solid #d9e7e8;
+
+    border-radius:50px;
+
+    outline:none;
+
+    font-size:1rem;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+.search-results{
+
+    position:absolute;
+
+    top:65px;
+
+    left:0;
+
+    right:0;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
+    display:none;
+
+    overflow:hidden;
+
+    z-index:100;
+
+}
+
+
+.search-results div{
+
+    padding:15px 20px;
+
+    cursor:pointer;
+
+}
+
+
+.search-results div:hover{
+
+    background:#eff9f9;
+
+}
+
+
+/* =========================================================
+   SOURCES
+========================================================= */
+
+.sources{
+
+    background:#031e26;
+
+    color:white;
+
+}
+
+
+.sources a{
+
+    color:var(--cyan2);
+
+}
+
+
+.source-card{
+
+    padding:25px;
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:20px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+
+    background:#02151b;
+
+    color:#a9c0c4;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark{
+
+    --bg:#071c22;
+
+    --card:#102d34;
+
+    --text:#e7f4f5;
+
+    --muted:#a7c0c4;
+
+}
+
+
+body.dark .section-title{
+
+    color:white;
+
+}
+
+
+body.dark .card,
+body.dark .species-card,
+body.dark .diet-card,
+body.dark .threat-card,
+body.dark .quiz-box{
+
+    background:#102d34;
+
+}
+
+
+body.dark .tab{
+
+    background:#183b43;
+
+    color:white;
+
+}
+
+
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+.floating{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    z-index:999;
+
+}
+
+
+.float-btn{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:var(--ocean);
+
+    color:white;
+
+    font-size:1.1rem;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+body.dark .float-btn{
+
+    background:var(--cyan);
+
+    color:var(--ocean);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .facts-grid,
+    .conservation-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .species-grid,
+    .diet-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .menu-btn{
+
+        display:block;
+
+    }
+
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:75px;
+
+        left:0;
+
+        right:0;
+
+        padding:25px;
+
+        background:var(--ocean);
+
+        flex-direction:column;
+
+    }
+
+
+    .nav-links.open{
+
+        display:flex;
+
+    }
+
+
+    .facts-grid,
+    .species-grid,
+    .diet-grid,
+    .threat-grid,
+    .conservation-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .bio-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .bio-image{
+
+        min-height:350px;
+
+    }
+
+
+    .timeline::before{
+
+        left:10px;
+
+    }
+
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd){
+
+        width:100%;
+
+        left:0;
+
+        text-align:left;
+
+        padding-left:40px;
+
+    }
+
+
+    .timeline-item .timeline-dot,
+    .timeline-item:nth-child(odd)
+    .timeline-dot{
+
+        left:0;
+
+        right:auto;
+
+    }
+
+
+    .hero h1{
+
+        letter-spacing:-2px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header>
+
+<nav class="nav">
+
+<div class="logo">
+MANATÍ<span>+</span>
+</div>
+
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#inicio">Inicio</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#biologia">Biología</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#especies">Especies</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#habitat">Hábitat</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#alimentacion">Alimentación</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#amenazas">Amenazas</a>
+</li>
+
+<li>
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#quiz">Quiz</a>
+</li>
+
+</ul>
+
+
+<div class="menu-btn" onclick="toggleMenu()">
+
+☰
+
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<div class="eyebrow">
+Ciencias naturales · Biodiversidad
+</div>
+
+
+<h1>
+EL
+<span>MANATÍ</span>
+</h1>
+
+
+<p class="hero-description">
+
+Un recorrido interactivo por la vida,
+el hábitat, la alimentación, las amenazas
+y la conservación de uno de los mamíferos
+acuáticos más fascinantes del planeta.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#biologia" class="btn btn-primary">
+
+Explorar el manatí →
+
+</a>
+
+
+<a href="file:///C:/Users/JOSE%20DAVID/.vscode/index.html#quiz" class="btn btn-outline">
+
+Pon a prueba tus conocimientos
+
+</a>
+
+</div>
+
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<strong>3</strong>
+
+<span>especies principales</span>
+
+</div>
+
+
+<div class="hero-stat">
+
+<strong>40</strong>
+
+<span>años de vida silvestre</span>
+
+</div>
+
+
+<div class="hero-stat">
+
+<strong>13 ft</strong>
+
+<span>longitud máxima general</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FACTS
+========================================================= -->
+
+<section class="facts">
+
+<div class="container">
+
+<div class="facts-grid">
+
+
+<div class="fact">
+
+<div class="fact-number" data-count="40">
+
+0
+
+</div>
+
+<h3>Años</h3>
+
+<p>
+Esperanza de vida promedio
+en estado silvestre.
+</p>
+
+</div>
+
+
+<div class="fact">
+
+<div class="fact-number" data-count="13">
+
+0
+
+</div>
+
+<h3>Pies</h3>
+
+<p>
+Longitud máxima general
+mencionada por National Geographic.
+</p>
+
+</div>
+
+
+<div class="fact">
+
+<div class="fact-number" data-count="8">
+
+0
+
+</div>
+
+<h3>Horas</h3>
+
+<p>
+Tiempo que pueden pasar
+alimentándose durante el día.
+</p>
+
+</div>
+
+
+<div class="fact">
+
+<div class="fact-number" data-count="15">
+
+0
+
+</div>
+
+<h3>mph</h3>
+
+<p>
+Velocidad que pueden alcanzar
+en ráfagas cortas.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SEARCH
+========================================================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+Explorador
+</div>
+
+<h2 class="section-title">
+Busca información
+</h2>
+
+<p class="section-description">
+
+Escribe una palabra para encontrar
+rápidamente diferentes temas del sitio.
+
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input type="text" id="searchInput" placeholder="🔎 Buscar: dieta, especies, hábitat, amenazas...">
+
+<div class="search-results" id="searchResults">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     BIOLOGÍA
+========================================================= -->
+
+<section class="section" id="biologia">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+01 · Biología
+</div>
+
+<h2 class="section-title">
+Conoce al manatí
+</h2>
+
+<p class="section-description">
+
+Aunque parece una criatura marina gigante,
+el manatí es un mamífero que necesita respirar
+aire y alimentar a sus crías con leche.
+
+</p>
+
+</div>
+
+
+<div class="bio-grid">
+
+
+<div class="bio-image"></div>
+
+
+<div>
+
+<h3>
+Un mamífero perfectamente adaptado al agua
+</h3>
+
+<p>
+
+Los manatíes pertenecen al género
+<i>Trichechus</i>. Son mamíferos acuáticos
+herbívoros que habitan principalmente
+aguas cálidas.
+
+</p>
+
+<ul class="info-list">
+
+<li>
+<strong>Reino:</strong> Animalia
+</li>
+
+<li>
+<strong>Clase:</strong> Mammalia
+</li>
+
+<li>
+<strong>Orden:</strong> Sirenia
+</li>
+
+<li>
+<strong>Género:</strong> Trichechus
+</li>
+
+<li>
+<strong>Dieta:</strong> Herbívora
+</li>
+
+<li>
+<strong>Vida promedio:</strong> alrededor de 40 años
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     TABS BIOLOGÍA
+========================================================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+Explora
+</div>
+
+<h2 class="section-title">
+¿Cómo vive un manatí?
+</h2>
+
+</div>
+
+
+<div class="tabs">
+
+<button class="tab active" onclick="openTab(event,&#39;respiracion&#39;)">
+
+🫁 Respiración
+
+</button>
+
+
+<button class="tab" onclick="openTab(event,&#39;movimiento&#39;)">
+
+🌊 Movimiento
+
+</button>
+
+
+<button class="tab" onclick="openTab(event,&#39;comportamiento&#39;)">
+
+🐋 Comportamiento
+
+</button>
+
+</div>
+
+
+<div id="respiracion" class="tab-content active">
+
+<h3>
+Respiración
+</h3>
+
+<p>
+
+Los manatíes viven en el agua, pero respiran
+aire. National Geographic señala que mientras
+nadan suelen salir a la superficie aproximadamente
+cada tres o cuatro minutos. Cuando descansan,
+pueden permanecer sumergidos hasta unos
+15 minutos.
+
+</p>
+
+</div>
+
+
+<div id="movimiento" class="tab-content">
+
+<h3>
+Movimiento
+</h3>
+
+<p>
+
+Utilizan una poderosa cola para impulsarse
+y sus aletas para dirigir el cuerpo. Normalmente
+se desplazan alrededor de 5 mph, aunque pueden
+alcanzar unas 15 mph en ráfagas cortas.
+
+</p>
+
+</div>
+
+
+<div id="comportamiento" class="tab-content">
+
+<h3>
+Comportamiento
+</h3>
+
+<p>
+
+Generalmente pueden observarse solos,
+en parejas o en grupos pequeños de hasta
+aproximadamente media docena.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ANATOMÍA INTERACTIVA
+========================================================= -->
+
+<section class="section anatomy">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+02 · Anatomía
+</div>
+
+<h2 class="section-title">
+Explora su cuerpo
+</h2>
+
+<p class="section-description">
+
+Pulsa los puntos para conocer algunas
+estructuras importantes del manatí.
+
+</p>
+
+</div>
+
+
+<div class="anatomy-container">
+
+<div class="anatomy-image"></div>
+
+
+<button class="hotspot" style="top:32%;left:26%;" onclick="showHotspot(&#39;nariz&#39;)">
+
+1
+
+</button>
+
+
+<button class="hotspot" style="top:65%;left:49%;" onclick="showHotspot(&#39;aleta&#39;)">
+
+2
+
+</button>
+
+
+<button class="hotspot" style="top:67%;left:78%;" onclick="showHotspot(&#39;cola&#39;)">
+
+3
+
+</button>
+
+
+<div id="hotspotInfo" class="hotspot-info">
+
+<h3 id="hotspotTitle">
+Selecciona una parte
+</h3>
+
+<p id="hotspotText">
+Explora la anatomía.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     SPECIES
+========================================================= -->
+
+<section class="section" id="especies">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+03 · Diversidad
+</div>
+
+<h2 class="section-title">
+Tres especies
+</h2>
+
+<p class="section-description">
+
+Las tres especies principales de manatíes
+se distinguen principalmente por las regiones
+en las que viven.
+
+</p>
+
+</div>
+
+
+<div class="species-grid">
+
+
+<div class="species-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="species-image caribbean"></div>
+
+<div class="species-info">
+
+<small>01 · Caribe</small>
+
+<h3>
+Manatí antillano
+</h3>
+
+<p>
+
+<i>Trichechus manatus manatus</i>.
+Se encuentra principalmente en zonas
+tropicales y subtropicales del Caribe
+y áreas cercanas.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="species-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="species-image amazon"></div>
+
+<div class="species-info">
+
+<small>02 · Amazonía</small>
+
+<h3>
+Manatí amazónico
+</h3>
+
+<p>
+
+Vive completamente en agua dulce.
+National Geographic lo describe como
+el más pequeño de los tres, con
+aproximadamente 8–9 pies de longitud.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="species-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="species-image africa"></div>
+
+<div class="species-info">
+
+<small>03 · África</small>
+
+<h3>
+Manatí africano
+</h3>
+
+<p>
+
+Habita en la costa occidental y
+diferentes sistemas fluviales de África.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     HABITAT
+========================================================= -->
+
+<section class="section map-section" id="habitat">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag" style="color:var(--cyan);">
+
+04 · Distribución
+
+</div>
+
+<h2 class="section-title" style="color:white;">
+
+Un planeta, diferentes hábitats
+
+</h2>
+
+<p class="section-description" style="color:#bcd4d7;">
+
+Los manatíes viven en aguas cálidas.
+Dependiendo de la especie pueden ocupar
+ríos, estuarios, lagos y aguas costeras.
+
+</p>
+
+</div>
+
+
+<div class="map">
+
+
+<div class="map-point" style="left:32%;top:35%;" data-location="Caribe">
+
+</div>
+
+
+<div class="map-point" style="left:47%;top:65%;" data-location="Amazonía">
+
+</div>
+
+
+<div class="map-point" style="left:52%;top:47%;" data-location="Golfo de México">
+
+</div>
+
+
+<div class="map-point" style="left:61%;top:48%;" data-location="África occidental">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     ALIMENTACIÓN
+========================================================= -->
+
+<section class="section" id="alimentacion">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+05 · Alimentación
+</div>
+
+<h2 class="section-title">
+¿Qué come?
+</h2>
+
+<p class="section-description">
+
+El manatí es un herbívoro con un apetito
+considerable. Puede pasar muchas horas
+del día buscando y consumiendo vegetación.
+
+</p>
+
+</div>
+
+
+<div class="diet-grid">
+
+
+<div class="diet-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="diet-icon">
+🌿
+</div>
+
+<h3>
+Pastos acuáticos
+</h3>
+
+<p>
+Constituyen una fuente importante
+de alimento para diferentes
+poblaciones.
+</p>
+
+</div>
+
+
+<div class="diet-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="diet-icon">
+🍃
+</div>
+
+<h3>
+Vegetación
+</h3>
+
+<p>
+También consume diferentes plantas
+acuáticas y vegetación cercana
+al agua.
+</p>
+
+</div>
+
+
+<div class="diet-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="diet-icon">
+🟢
+</div>
+
+<h3>
+Algas
+</h3>
+
+<p>
+Las algas forman parte de su dieta
+junto con otras plantas acuáticas.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CICLO DE VIDA
+========================================================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+06 · Reproducción
+</div>
+
+<h2 class="section-title">
+El comienzo de una nueva vida
+</h2>
+
+</div>
+
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>
+Nacimiento
+</h3>
+
+<p>
+
+Las crías nacen bajo el agua.
+La madre ayuda al recién nacido
+a llegar hasta la superficie
+para respirar.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>
+Primeros momentos
+</h3>
+
+<p>
+
+National Geographic señala que
+las crías normalmente pueden nadar
+por sí mismas aproximadamente
+una hora después de nacer.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>
+Alimentación
+</h3>
+
+<p>
+
+Las crías se alimentan de la leche
+de su madre mientras se desarrollan.
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>
+Vida adulta
+</h3>
+
+<p>
+
+Al crecer, los manatíes se convierten
+en grandes herbívoros acuáticos
+capaces de consumir grandes
+cantidades de vegetación.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     AMENAZAS
+========================================================= -->
+
+<section class="section threats" id="amenazas">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+07 · Problemas
+</div>
+
+<h2 class="section-title">
+¿Qué los amenaza?
+</h2>
+
+<p class="section-description">
+
+Las amenazas no son iguales en todos los lugares,
+pero la actividad humana puede aumentar
+la presión sobre sus poblaciones y hábitats.
+
+</p>
+
+</div>
+
+
+<div class="threat-grid">
+
+
+<div class="threat-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<h3>
+🚤 Embarcaciones
+</h3>
+
+<p>
+
+Los manatíes pueden ser golpeados
+accidentalmente por embarcaciones,
+especialmente en zonas con mucho
+tráfico.
+
+</p>
+
+<div class="progress">
+
+<span data-progress="90"></span>
+
+</div>
+
+</div>
+
+
+<div class="threat-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<h3>
+🎣 Pesca
+</h3>
+
+<p>
+
+Las redes y otros elementos utilizados
+en actividades pesqueras pueden
+provocar enredos.
+
+</p>
+
+<div class="progress">
+
+<span data-progress="75"></span>
+
+</div>
+
+</div>
+
+
+<div class="threat-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<h3>
+💧 Contaminación
+</h3>
+
+<p>
+
+La contaminación puede afectar
+la calidad del agua y los ecosistemas
+de los que dependen.
+
+</p>
+
+<div class="progress">
+
+<span data-progress="85"></span>
+
+</div>
+
+</div>
+
+
+<div class="threat-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<h3>
+🌿 Pérdida de hábitat
+</h3>
+
+<p>
+
+La degradación de los ambientes
+acuáticos puede reducir el acceso
+a alimento y refugio.
+
+</p>
+
+<div class="progress">
+
+<span data-progress="80"></span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<p style="margin-top:30px;color:#777;font-size:.85rem;">
+
+*Los indicadores son una representación visual educativa
+y no porcentajes científicos de probabilidad o mortalidad.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     CONSERVACIÓN
+========================================================= -->
+
+<section class="section conservation">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag" style="color:var(--cyan);">
+
+08 · Conservación
+
+</div>
+
+<h2 class="section-title" style="color:white;">
+
+¿Cómo podemos ayudar?
+
+</h2>
+
+<p class="section-description" style="color:#bcd4d7;">
+
+Conservar al manatí implica proteger
+también los ecosistemas acuáticos
+de los que depende.
+
+</p>
+
+</div>
+
+
+<div class="conservation-grid">
+
+
+<div class="conservation-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="conservation-icon">
+🚤
+</div>
+
+<h3>
+Navegar responsablemente
+</h3>
+
+<p>
+Respetar las zonas donde viven
+los manatíes ayuda a reducir
+el riesgo de colisiones.
+</p>
+
+</div>
+
+
+<div class="conservation-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="conservation-icon">
+💧
+</div>
+
+<h3>
+Proteger el agua
+</h3>
+
+<p>
+Reducir la contaminación ayuda
+a mantener saludables los
+ecosistemas acuáticos.
+</p>
+
+</div>
+
+
+<div class="conservation-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="conservation-icon">
+🌱
+</div>
+
+<h3>
+Proteger la vegetación
+</h3>
+
+<p>
+Los pastos y plantas acuáticas
+son fundamentales para su
+alimentación.
+</p>
+
+</div>
+
+
+<div class="conservation-card" style="opacity: 0; transform: translateY(30px); transition: opacity 0.7s, transform 0.7s;">
+
+<div class="conservation-icon">
+📚
+</div>
+
+<h3>
+Educar
+</h3>
+
+<p>
+Conocer una especie es uno de
+los primeros pasos para aprender
+a conservarla.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FUN FACT
+========================================================= -->
+
+<section class="fun-fact">
+
+<div class="fact-box">
+
+<div class="emoji">
+🐋
+</div>
+
+<div class="section-tag">
+¿Sabías que...?
+</div>
+
+<h2 id="randomFact">
+
+Los manatíes pueden permanecer
+sumergidos durante varios minutos.
+
+</h2>
+
+<button class="btn btn-primary fact-button" onclick="newFact()">
+
+Descubrir otro dato
+
+</button>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     QUIZ
+========================================================= -->
+
+<section class="section quiz" id="quiz">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag">
+09 · Quiz
+</div>
+
+<h2 class="section-title">
+¿Eres un experto en manatíes?
+</h2>
+
+<p class="section-description">
+
+Responde las preguntas y descubre
+cuánto aprendiste.
+
+</p>
+
+</div>
+
+
+<div class="quiz-box">
+
+
+<div class="question">
+
+<h3>
+1. ¿Cuál es la dieta principal del manatí?
+</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="a">
+Peces
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="b">
+Plantas
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="c">
+Carne
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+2. ¿Cuál es el género de los manatíes?
+</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="a">
+Trichechus
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="b">
+Delphinus
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="c">
+Panthera
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+3. ¿Cuántas especies principales existen?
+</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+1
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+3
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+7
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+4. ¿Cuál es una amenaza importante?
+</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="a">
+Colisiones con embarcaciones
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="b">
+Nieve
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="c">
+Volcanes
+</label>
+
+</div>
+
+
+<div class="question">
+
+<h3>
+5. ¿Dónde vive completamente el manatí amazónico?
+</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="a">
+Agua dulce
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="b">
+Desiertos
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="c">
+Hielo
+</label>
+
+</div>
+
+
+<button class="btn btn-primary" onclick="calculateQuiz()">
+
+Calcular resultado
+
+</button>
+
+
+<div class="result" id="quizResult">
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FUENTES
+========================================================= -->
+
+<section class="section sources">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-tag" style="color:var(--cyan);">
+
+10 · Fuentes
+
+</div>
+
+<h2 class="section-title" style="color:white;">
+
+Bibliografía
+</h2>
+
+</div>
+
+
+<div class="source-card">
+
+<strong>
+National Geographic — Manatees
+</strong>
+
+<p>
+Información general, anatomía, alimentación,
+comportamiento, distribución y amenazas.
+</p>
+
+<a href="https://www.nationalgeographic.com/animals/mammals/facts/manatees" target="_blank">
+
+Consultar fuente →
+
+</a>
+
+</div>
+
+
+<div class="source-card">
+
+<strong>
+National Geographic — Antillean Manatee
+</strong>
+
+<p>
+Información sobre el manatí antillano,
+su distribución y amenazas.
+</p>
+
+<a href="https://www.nationalgeographic.com/animals/mammals/facts/antillean-manatee" target="_blank">
+
+Consultar fuente →
+
+</a>
+
+</div>
+
+
+<div class="source-card">
+
+<strong>
+National Geographic — Amazonian Manatees
+</strong>
+
+<p>
+Información sobre el manatí amazónico
+y su vida en los ríos de la Amazonía.
+</p>
+
+<a href="https://www.nationalgeographic.com/animals/article/get-a-rare-glimpse-into-the-hidden-lives-of-amazonian-manatees" target="_blank">
+
+Consultar fuente →
+
+</a>
+
+</div>
+
+
+<div class="source-card">
+
+<strong>
+National Geographic — Conservación
+</strong>
+
+<p>
+Artículos sobre conservación, amenazas,
+hábitat y recuperación de poblaciones.
+</p>
+
+<a href="https://www.nationalgeographic.com/magazine/article/save-manatees-florida-die-offs-feature" target="_blank">
+
+Consultar fuente →
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+<p>
+
+🐋 <strong>MANATÍ+</strong>
+
+</p>
+
+<p>
+
+Proyecto ambiental · Ciencias Naturales · Grado 10°
+
+</p>
+
+<p style="margin-top:10px;font-size:.8rem;">
+
+Información científica basada en fuentes de
+National Geographic.
+
+</p>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING BUTTONS
+========================================================= -->
+
+<div class="floating">
+
+<button class="float-btn" onclick="toggleDarkMode()" title="Modo oscuro">
+
+🌙
+
+</button>
+
+
+<button class="float-btn" onclick="window.scrollTo({top:0,behavior:&#39;smooth&#39;})" title="Volver arriba">
+
+↑
+
+</button>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   MENÚ MÓVIL
+========================================================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("open");
+
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+function openTab(event, tabName){
+
+    const contents =
+    document.querySelectorAll(".tab-content");
+
+    contents.forEach(
+        content =>
+        content.classList.remove("active")
+    );
+
+
+    const tabs =
+    document.querySelectorAll(".tab");
+
+    tabs.forEach(
+        tab =>
+        tab.classList.remove("active")
+    );
+
+
+    document
+    .getElementById(tabName)
+    .classList
+    .add("active");
+
+
+    event.currentTarget
+    .classList
+    .add("active");
+
+}
+
+
+/* =========================================================
+   ANATOMÍA
+========================================================= */
+
+function showHotspot(part){
+
+    const info =
+    document.getElementById("hotspotInfo");
+
+    const title =
+    document.getElementById("hotspotTitle");
+
+    const text =
+    document.getElementById("hotspotText");
+
+
+    const data = {
+
+        nariz:{
+
+            title:"👃 Nariz y respiración",
+
+            text:
+            "Los manatíes necesitan salir a la superficie para respirar aire. Sus fosas nasales están situadas en la parte superior del hocico."
+
+        },
+
+        aleta:{
+
+            title:"🦭 Aletas",
+
+            text:
+            "Las aletas ayudan al manatí a dirigir su movimiento. También pueden utilizarlas para desplazarse lentamente en aguas poco profundas."
+
+        },
+
+        cola:{
+
+            title:"🌊 Cola",
+
+            text:
+            "La gran cola del manatí funciona como una poderosa pala que genera el impulso necesario para nadar."
+
+        }
+
+    };
+
+
+    title.textContent =
+    data[part].title;
+
+    text.textContent =
+    data[part].text;
+
+    info.classList.add("show");
+
+}
+
+
+/* =========================================================
+   CONTADORES
+========================================================= */
+
+const counters =
+document.querySelectorAll(".fact-number");
+
+
+let counterStarted=false;
+
+
+function startCounters(){
+
+    if(counterStarted)
+        return;
+
+    counterStarted=true;
+
+
+    counters.forEach(counter=>{
+
+        const target =
+        Number(counter.dataset.count);
+
+        let current=0;
+
+        const increment =
+        Math.ceil(target/40);
+
+
+        const timer =
+        setInterval(()=>{
+
+            current+=increment;
+
+            if(current>=target){
+
+                current=target;
+
+                clearInterval(timer);
+
+            }
+
+            counter.textContent=current;
+
+        },30);
+
+    });
+
+}
+
+
+const counterObserver =
+new IntersectionObserver(entries=>{
+
+    if(entries[0].isIntersecting){
+
+        startCounters();
+
+    }
+
+});
+
+
+counterObserver.observe(
+    document.querySelector(".facts")
+);
+
+
+/* =========================================================
+   BARRAS
+========================================================= */
+
+const progressBars =
+document.querySelectorAll(
+    ".progress span"
+);
+
+
+const progressObserver =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.width =
+            entry.target.dataset.progress+"%";
+
+        }
+
+    });
+
+});
+
+
+progressBars.forEach(
+    bar =>
+    progressObserver.observe(bar)
+);
+
+
+/* =========================================================
+   RANDOM FACTS
+========================================================= */
+
+const facts=[
+
+"Los manatíes pueden consumir grandes cantidades de vegetación.",
+
+"Los manatíes son mamíferos, no peces.",
+
+"El género científico del manatí es Trichechus.",
+
+"Un manatí puede respirar aire mientras vive en el agua.",
+
+"Los manatíes suelen moverse solos, en parejas o en grupos pequeños.",
+
+"El manatí amazónico vive completamente en agua dulce.",
+
+"Los manatíes son conocidos como 'vacas marinas'.",
+
+"Los manatíes pueden alcanzar aproximadamente 15 mph en ráfagas cortas.",
+
+"Las crías nacen bajo el agua.",
+
+"La conservación de los manatíes depende también de conservar sus ecosistemas."
+
+];
+
+
+function newFact(){
+
+    const element =
+    document.getElementById("randomFact");
+
+
+    const random =
+    Math.floor(
+        Math.random()*facts.length
+    );
+
+
+    element.style.opacity="0";
+
+
+    setTimeout(()=>{
+
+        element.textContent =
+        facts[random];
+
+        element.style.opacity="1";
+
+    },200);
+
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+function calculateQuiz(){
+
+    const answers={
+
+        q1:"b",
+        q2:"a",
+        q3:"b",
+        q4:"a",
+        q5:"a"
+
+    };
+
+
+    let score=0;
+
+
+    for(
+        const question in answers
+    ){
+
+        const selected =
+        document.querySelector(
+            `input[name="${question}"]:checked`
+        );
+
+
+        if(
+            selected &&
+            selected.value===answers[question]
+        ){
+
+            score++;
+
+        }
+
+    }
+
+
+    const result =
+    document.getElementById(
+        "quizResult"
+    );
+
+
+    let message;
+
+
+    if(score===5){
+
+        message=
+        "🏆 ¡Excelente! Eres un experto en manatíes.";
+
+    }
+
+    else if(score>=4){
+
+        message=
+        "🌊 ¡Muy bien! Tienes un gran conocimiento.";
+
+    }
+
+    else if(score>=3){
+
+        message=
+        "🐋 ¡Buen trabajo! Todavía puedes aprender más.";
+
+    }
+
+    else{
+
+        message=
+        "🌱 Sigue explorando la página y vuelve a intentarlo.";
+
+    }
+
+
+    result.innerHTML=
+    `<strong>${message}</strong>
+     <br>
+     Obtuviste ${score} de 5 respuestas correctas.`;
+
+    result.style.display="block";
+
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+function toggleDarkMode(){
+
+    document
+    .body
+    .classList
+    .toggle("dark");
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput =
+document.getElementById(
+    "searchInput"
+);
+
+
+const searchResults =
+document.getElementById(
+    "searchResults"
+);
+
+
+const searchData=[
+
+    ["Biología","biologia"],
+
+    ["Especies","especies"],
+
+    ["Hábitat","habitat"],
+
+    ["Alimentación","alimentacion"],
+
+    ["Amenazas","amenazas"],
+
+    ["Reproducción","quiz"],
+
+    ["Conservación","quiz"],
+
+    ["Quiz","quiz"]
+
+];
+
+
+searchInput.addEventListener(
+"input",
+()=>{
+
+    const query =
+    searchInput.value
+    .toLowerCase()
+    .trim();
+
+
+    if(!query){
+
+        searchResults.style.display="none";
+
+        return;
+
+    }
+
+
+    const matches =
+    searchData.filter(item=>
+        item[0]
+        .toLowerCase()
+        .includes(query)
+    );
+
+
+    if(matches.length===0){
+
+        searchResults.innerHTML=
+        "<div>No se encontraron resultados.</div>";
+
+    }
+
+    else{
+
+        searchResults.innerHTML=
+        matches.map(item=>
+
+            `<div
+            onclick="goToSection('${item[1]}')">
+            🔎 ${item[0]}
+            </div>`
+
+        ).join("");
+
+    }
+
+
+    searchResults.style.display="block";
+
+});
+
+
+function goToSection(id){
+
+    document
+    .getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+    searchResults.style.display="none";
+
+    searchInput.value="";
+
+}
+
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+const revealElements =
+document.querySelectorAll(
+    ".species-card, .diet-card, .threat-card, .conservation-card"
+);
+
+
+const revealObserver =
+new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform=
+            "translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+
+revealElements.forEach(element=>{
+
+    element.style.opacity="0";
+
+    element.style.transform=
+    "translateY(30px)";
+
+    element.style.transition=
+    "opacity .7s ease, transform .7s ease";
+
+    revealObserver.observe(element);
+
+});
+
+
+</script>
+
+
+</body></html>
